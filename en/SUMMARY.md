@@ -15,4 +15,5 @@
   * [4.1 Build Tengine](chapters/part3/subChapters/Build-Tengine.md)
   * [4.2 Configure Double Certificates](chapters/part3/subChapters/Double-Certs.md)
   * [4.3  Spice Auto Switch Wss](chapters/part3/subChapters/Auto-Switch-WSS.md)
-  * [4.4 Link Test](chapters/part3/subChapters/Client-Link.md)
+  * [4.4 Stunnel Encrypted Forward (Reform to support SM)](chapters/part3/subChapters/Stunnel-Proxy.md)
+  * [4.5 Link Test](chapters/part3/subChapters/Client-Link.md)

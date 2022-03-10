@@ -15,4 +15,5 @@
   * [4.1 编译 Tengine](chapters/part3/subChapters/Build-Tengine.md)
   * [4.2 双证书配置](chapters/part3/subChapters/Double-Certs.md)
   * [4.3  Spice Auto Switch Wss](chapters/part3/subChapters/Auto-Switch-WSS.md)
-  * [4.4 测试连接](chapters/part3/subChapters/Client-Link.md)
+  * [4.4 Stunnel 加密转发(改造支持国密)](chapters/part3/subChapters/Stunnel-Proxy.md)
+  * [4.5 测试连接](chapters/part3/subChapters/Client-Link.md)
