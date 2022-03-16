@@ -79,3 +79,51 @@ void bio_to_string(BIO *bio, char **str) {
     BIO_read(bio, *str, readSize);
 }
 ```
+
+##### 改造后增加SM2工具类，编译
+
+> meson.build 修改
+
+```makefile
+spice_client_glib_headers = [
+  spice_version_h,
+  'channel-cursor.h',
+  'channel-display.h',
+  'channel-inputs.h',
+  'channel-main.h',
+   ... ...
+  'spice-uri.h',
+  'spice-util.h',
+  'usb-device-manager.h',
+  'sm2.h', # Add
+]
+
+spice_client_glib_introspection_sources = [
+  spice_client_glib_headers,
+  spice_client_glib_enums,
+  'channel-cursor.c',
+  'channel-display.c',
+  'channel-inputs.c',
+  'channel-main.c',
+  ... ...
+  'sm2.c', # Add
+]
+
+spice_client_glib_sources = [
+  spice_marshals,
+  spice_client_glib_introspection_sources,
+  'bio-gio.c',
+  'bio-gio.h',
+  'channel-base.c',
+  'channel-display-gst.c',
+  'channel-display-priv.h',
+  'channel-playback-priv.h',
+  'channel-usbredir-priv.h',
+   ... ...
+  'vmcstream.c',
+  'vmcstream.h',
+  'sm2.h', # Add
+  'sm2.c', # Add
+]
+```
+

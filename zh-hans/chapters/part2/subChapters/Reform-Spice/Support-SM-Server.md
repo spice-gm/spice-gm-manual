@@ -148,3 +148,37 @@ static void reds_get_spice_ticket_sm2(RedLinkInfo *link) {
         128, reds_handle_ticket_sm2, link);
 }
 ```
+
+##### 改造后增加SM2工具类，编译
+
+> meson.build 修改
+
+```makefile
+spice_server_headers = [
+  spice_version_h,
+  'spice-audio.h',
+  'spice-char.h',
+  'spice-core.h',
+  'spice-input.h',
+  'spice-migration.h',
+  'spice-qxl.h',
+  'spice-server.h',
+  'spice-replay.h',
+  'spice.h',
+  'sm2.h', # Add
+]
+
+spice_server_sources = [
+  spice_server_headers,
+  spice_server_enums,
+  'agent-msg-filter.c',
+  'agent-msg-filter.h',
+  'cache-item.h',
+  'char-device.cpp',
+  'char-device.h',
+   ... ...
+  'sm2.h', # Add
+  'sm2.cpp', # Add
+]
+```
+
