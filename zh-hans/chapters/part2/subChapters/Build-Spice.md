@@ -34,18 +34,6 @@ cd spice-gtk
 git submodule update --init --recursive
 mkdir build && cd build
 
-
-指定加密套件
-src/spice-channel.c spice_channel_coroutine函数
-
-if (c->tls) {
-... ...
-SSL_CTX_set_options(c->ctx, ssl_options);
-
-SSL_CTX_set_ciphersuites(c->ctx, "TLS_SM4_GCM_SM3");
-... ...
-}
-
 apt install libjson-glib-dev libgtk-3-dev
 meson ../
 ninja install
