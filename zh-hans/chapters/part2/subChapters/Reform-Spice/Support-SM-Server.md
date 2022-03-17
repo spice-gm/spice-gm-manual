@@ -109,6 +109,12 @@ static void reds_handle_ticket_sm2(void *opaque) {
 
     password_size = sm2Handler.Decrypt(encrypted_data_str, encrypted_data_str.length(), decrypted_password, len_plaint, link->tiTicketing.priKey);
 
+    if (password_size == -1) {
+        spice_warning("failed to decrypt SM2 encrypted password");
+        red_dump_openssl_errors();
+        goto error;
+    }
+
     if (reds->config->ticketing_enabled && !link->skip_auth) {
         time_t ltime;
         bool expired;

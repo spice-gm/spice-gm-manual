@@ -43,14 +43,13 @@ static SpiceChannelEvent spice_channel_send_spice_ticket_sm2(SpiceChannel *chann
     bio_to_string(bioKey_pem, &sm2_pubkey);
     g_object_get(c->session, "password", &password, NULL);
     if (password == NULL) password = g_strdup("");
-    if (strlen(password) > SPICE_MAX_PASSWORD_LENGTH)
-    {
+    if (strlen(password) > SPICE_MAX_PASSWORD_LENGTH) {
         spice_channel_failed_spice_authentication(channel, TRUE);
         ret = SPICE_CHANNEL_ERROR_AUTH;
         goto cleanup;
     }
-    if (password == NULL) password = g_strdup("");
-    rc = Encrypt(password, strlen(password), &en_password, &en_password_len, sm2_pubkey);
+
+    rc = Encrypt(password, strlen(password) + 1, &en_password, &en_password_len, sm2_pubkey);
     g_warn_if_fail(rc > 0);
     encrypted = (uint8_t *)en_password;
     // printf("Debug: encrypted: %s \n", encrypted);
