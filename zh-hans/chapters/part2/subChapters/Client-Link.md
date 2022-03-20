@@ -3,9 +3,9 @@
 ##### RSA证书
 
 ```sh
-qemu-system-x86_64 -spice port=5930,tls-port=47001,disable-ticketing=on,x509-dir=/home/sovea/dev/spice/openssl_cert_files,tls-channel=main,tls-channel=inputs -drive file=/home/sovea/dev/spice/qemu-images/fedora.img -enable-kvm -net nic -net user
+qemu-system-x86_64 -spice port=5930,tls-port=47001,disable-ticketing=on,x509-dir=/home/sovea/dev/spice/rsa_cert_files,tls-channel=main,tls-channel=inputs -drive file=/home/sovea/dev/spice/img-instance/fedora.img -enable-kvm -net nic -net user
 
-spicy --spice-ca-file=/home/sovea/dev/spice/openssl_cert_files/ca-cert.pem spice://127.0.0.1?tls-port=47001 --spice-host-subject="C=IL, L=Raanana, O=Red Hat, CN=my server"
+spicy --spice-ca-file=/home/sovea/dev/spice/rsa_cert_files/ca-cert.pem spice://127.0.0.1?tls-port=47001 --spice-host-subject="C=IL, L=Raanana, O=Red Hat, CN=my server"
 ```
 
 ##### SM2证书
