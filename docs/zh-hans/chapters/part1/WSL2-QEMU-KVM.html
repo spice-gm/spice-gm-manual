@@ -1,0 +1,591 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>二、WSL2开启QEMU-KVM虚拟化支持 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../part2/Spice-With-BabaSSL.html" />
+    
+    
+    <link rel="prev" href="../../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    一、简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="WSL2-QEMU-KVM.html">
+            
+                <a href="WSL2-QEMU-KVM.html">
+            
+                    
+                    二、WSL2开启QEMU-KVM虚拟化支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../part2/Spice-With-BabaSSL.html">
+            
+                <a href="../part2/Spice-With-BabaSSL.html">
+            
+                    
+                    三、编译改造 Spice
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../part2/subChapters/Build-BabaSSL.html">
+            
+                <a href="../part2/subChapters/Build-BabaSSL.html">
+            
+                    
+                    3.1 搭建 BabaSSL 环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../part2/subChapters/Meson-Ninja.html">
+            
+                <a href="../part2/subChapters/Meson-Ninja.html">
+            
+                    
+                    3.2 Meson & Ninja
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../part2/subChapters/Build-Spice.html">
+            
+                <a href="../part2/subChapters/Build-Spice.html">
+            
+                    
+                    3.3 Spice 项目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../part2/subChapters/Reform-Spice/SM2-EVP.html">
+            
+                <a href="../part2/subChapters/Reform-Spice/SM2-EVP.html">
+            
+                    
+                    3.3.1 SM2-EVP C/C++ 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../part2/subChapters/Reform-Spice/Support-SM-Server.html">
+            
+                <a href="../part2/subChapters/Reform-Spice/Support-SM-Server.html">
+            
+                    
+                    3.3.2 Spice-Server 改造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../part2/subChapters/Reform-Spice/Support-SM-GTK.html">
+            
+                <a href="../part2/subChapters/Reform-Spice/Support-SM-GTK.html">
+            
+                    
+                    3.3.3 Spice-GTK 改造
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../part2/subChapters/Build-QEMU.html">
+            
+                <a href="../part2/subChapters/Build-QEMU.html">
+            
+                    
+                    3.4 QEMU 编译开启 Spice 支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../part2/subChapters/Make-Certs.html">
+            
+                <a href="../part2/subChapters/Make-Certs.html">
+            
+                    
+                    3.5 签发证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../part2/subChapters/Client-Link.html">
+            
+                <a href="../part2/subChapters/Client-Link.html">
+            
+                    
+                    3.6 测试连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../part3/Spice-With-BabaSSL.md">
+            
+                <span>
+            
+                    
+                    四、改造 Spice-html5
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../part3/subChapters/Build-Tengine.html">
+            
+                <a href="../part3/subChapters/Build-Tengine.html">
+            
+                    
+                    4.1 编译 Tengine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../part3/subChapters/Double-Certs.html">
+            
+                <a href="../part3/subChapters/Double-Certs.html">
+            
+                    
+                    4.2 双证书配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../part3/subChapters/Auto-Switch-WSS.html">
+            
+                <a href="../part3/subChapters/Auto-Switch-WSS.html">
+            
+                    
+                    4.3 Spice Auto Switch Wss
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../part3/subChapters/Handle-Ticket-With-SM2.html">
+            
+                <a href="../part3/subChapters/Handle-Ticket-With-SM2.html">
+            
+                    
+                    4.4 Spice Handle Ticket With SM2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../part3/subChapters/Handle-Ticket-With-SM2/Install-NodeJS-WSL2.html">
+            
+                <a href="../part3/subChapters/Handle-Ticket-With-SM2/Install-NodeJS-WSL2.html">
+            
+                    
+                    4.4.1 WSL2 Install Node.js & NPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../part3/subChapters/Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.html">
+            
+                <a href="../part3/subChapters/Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.html">
+            
+                    
+                    4.4.2 SM-Crypto-Plugin Addons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../part3/subChapters/Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.html">
+            
+                <a href="../part3/subChapters/Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.html">
+            
+                    
+                    4.4.3 Spice-html5 Use Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../part3/subChapters/Stunnel-Proxy.html">
+            
+                <a href="../part3/subChapters/Stunnel-Proxy.html">
+            
+                    
+                    4.5 Stunnel 加密转发(改造支持国密)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../part3/subChapters/Client-Link.html">
+            
+                <a href="../part3/subChapters/Client-Link.html">
+            
+                    
+                    4.6 测试连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >二、WSL2开启QEMU-KVM虚拟化支持</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="wsl2-qemu-kvm-&#x73AF;&#x5883;&#x642D;&#x5EFA;">WSL2 QEMU-KVM &#x73AF;&#x5883;&#x642D;&#x5EFA;</h1>
+<h5 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x57FA;&#x7840;&#x73AF;&#x5883;">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x57FA;&#x7840;&#x73AF;&#x5883;</h5>
+<ul>
+<li>&#x672C;&#x673A; Windows 11 + WSL + LxRunOffline</li>
+<li>WSL2 Ubuntu 18.04</li>
+</ul>
+<pre><code class="lang-sh">LxRunOffline install -n &lt;WSL&#x540D;&#x79F0;&gt; <span class="hljs-_">-d</span> &lt;&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;&#x7684;&#x8DEF;&#x5F84;&gt; <span class="hljs-_">-f</span> &lt;&#x955C;&#x50CF;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&gt;\xxx.tar.gz <span class="hljs-_">-s</span>
+
+LxRunOffline install -n ubuntu18-spice <span class="hljs-_">-d</span> D:\WSL\Instance\ubuntu18-spice\ <span class="hljs-_">-f</span> D:\WSL\Ubuntu18\install.tar.gz <span class="hljs-_">-s</span>
+
+wsl --set-version ubuntu18-spice 2
+</code></pre>
+<p><strong>&#x91CD;&#x65B0;&#x7F16;&#x8BD1;Linux&#x5185;&#x6838;&#xFF0C;&#x4F18;&#x5316; WSL &#x4E0A; KVM &#x7684;&#x5185;&#x6838;&#x914D;&#x7F6E;</strong></p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://github.com/microsoft/WSL2-Linux-Kernel.git
+<span class="hljs-built_in">cd</span> WSL2-Linux-Kernel
+git checkout linux-msft-wsl-5.10.y
+
+zcat /proc/config.gz &gt; .config
+sudo apt install ncurses-dev flex bison cpu-checker
+make menuconfig
+</code></pre>
+<p>&#x5728; <code>Virtualization</code> &#x4E2D;&#x786E;&#x8BA4; Intel &#x652F;&#x6301;&#x5DF2;&#x88AB;&#x9009;&#x4E2D;&#xFF0C;<code>virtio-net</code> &#x4E5F;&#x88AB;&#x9009;&#x4E2D; ( &#x5982;&#x679C;&#x6709; )</p>
+<p>&#x518D;&#x5BFC;&#x822A;&#x81F3; <code>Processor type and features -&gt; Linux guest support</code>&#xFF0C;&#x786E;&#x5B9A; <code>KVM Guest support</code> &#x5DF2;&#x88AB;&#x9009;&#x4E2D;</p>
+<p>&#x4EE5;&#x4E0A;&#x63D0;&#x5230;&#x7684;&#x9009;&#x9879;&#x5EFA;&#x8BAE;&#x9009;&#x4E2D;&#x4E3A;*&#x53F7;&#xFF0C;&#x76F4;&#x63A5;&#x7F16;&#x8BD1;&#x5230;&#x5185;&#x6838;&#x4E2D;</p>
+<pre><code class="lang-sh">apt install libelf-dev dwarves
+make -j 8
+sudo make modules_install
+
+cp arch/x86/boot/bzImage /mnt/c/Users/&lt;username&gt;/bzImage
+<span class="hljs-comment"># bzImage&#x5DF2;&#x5B58;&#x5728;&#x65F6;&#x4F1A;&#x62A5;&#x9519;cannot create regular file</span>
+vim /mnt/c/Users/&lt;username&gt;/.wslconfig
+
+<span class="hljs-comment"># &#x5199;&#x5165;</span>
+[wsl2]
+nestedVirtualization=<span class="hljs-literal">true</span>
+kernel=C:\\Users\\a1063\\bzImage
+kernelCommandLine=intel_iommu=on iommu=pt kvm.ignore_msrs=1 kvm-intel.nested=1 kvm-intel.ept=1 kvm-intel.emulate_invalid_guest_state=0 kvm-intel.enable_shadow_vmcs=1 kvm-intel.enable_apicv=1
+</code></pre>
+<p><strong>&#x5173;&#x95ED;&#x5B9E;&#x4F8B;&#xFF0C;&#x91CD;&#x542F;WSL</strong></p>
+<pre><code class="lang-sh">wsl --shutdown
+
+<span class="hljs-comment">#&#x505C;&#x6B62;LxssManager&#x670D;&#x52A1;</span>
+net stop LxssManager  
+
+<span class="hljs-comment">#&#x542F;&#x52A8;LxssManager&#x670D;&#x52A1;</span>
+net start LxssManager
+</code></pre>
+<p><strong>&#x914D;&#x7F6E; kvm-intel</strong></p>
+<pre><code class="lang-sh">vim /etc/modprobe.d/kvm-nested.conf
+</code></pre>
+<p>&#x5199;&#x5165;</p>
+<pre><code class="lang-sh">options kvm-intel nested=1
+options kvm-intel <span class="hljs-built_in">enable</span>_shadow_vmcs=1
+options kvm-intel <span class="hljs-built_in">enable</span>_apicv=1
+options kvm-intel ept=1
+</code></pre>
+<p><strong>&#x52A0;&#x8F7D;&#x5185;&#x6838;&#x6A21;&#x5757;</strong></p>
+<pre><code class="lang-sh">sudo modprobe kvm_intel
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x6D4B;&#x8BD5; KVM&#xFF1A;</p>
+<pre><code class="lang-sh">kvm-ok
+</code></pre>
+<p>&#x68C0;&#x67E5;&#x5D4C;&#x5957;&#x7684; KVM&#xFF1A;</p>
+<pre><code class="lang-sh">cat /sys/module/kvm_intel/parameters/nested <span class="hljs-comment"># &#x8F93;&#x51FA;Y</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: 一、简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../part2/Spice-With-BabaSSL.html" class="navigation navigation-next " aria-label="Next page: 三、编译改造 Spice">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"二、WSL2开启QEMU-KVM虚拟化支持","level":"1.2","depth":1,"next":{"title":"三、编译改造 Spice","level":"1.3","depth":1,"path":"chapters/part2/Spice-With-BabaSSL.md","ref":"chapters/part2/Spice-With-BabaSSL.md","articles":[{"title":"3.1 搭建 BabaSSL 环境","level":"1.3.1","depth":2,"path":"chapters/part2/subChapters/Build-BabaSSL.md","ref":"chapters/part2/subChapters/Build-BabaSSL.md","articles":[]},{"title":"3.2 Meson & Ninja","level":"1.3.2","depth":2,"path":"chapters/part2/subChapters/Meson-Ninja.md","ref":"chapters/part2/subChapters/Meson-Ninja.md","articles":[]},{"title":"3.3 Spice 项目","level":"1.3.3","depth":2,"path":"chapters/part2/subChapters/Build-Spice.md","ref":"chapters/part2/subChapters/Build-Spice.md","articles":[{"title":"3.3.1 SM2-EVP C/C++ 实现","level":"1.3.3.1","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/SM2-EVP.md","ref":"chapters/part2/subChapters/Reform-Spice/SM2-EVP.md","articles":[]},{"title":"3.3.2 Spice-Server 改造","level":"1.3.3.2","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-Server.md","ref":"chapters/part2/subChapters/Reform-Spice/Support-SM-Server.md","articles":[]},{"title":"3.3.3 Spice-GTK 改造","level":"1.3.3.3","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-GTK.md","ref":"chapters/part2/subChapters/Reform-Spice/Support-SM-GTK.md","articles":[]}]},{"title":"3.4 QEMU 编译开启 Spice 支持","level":"1.3.4","depth":2,"path":"chapters/part2/subChapters/Build-QEMU.md","ref":"chapters/part2/subChapters/Build-QEMU.md","articles":[]},{"title":"3.5 签发证书","level":"1.3.5","depth":2,"path":"chapters/part2/subChapters/Make-Certs.md","ref":"chapters/part2/subChapters/Make-Certs.md","articles":[]},{"title":"3.6 测试连接","level":"1.3.6","depth":2,"path":"chapters/part2/subChapters/Client-Link.md","ref":"chapters/part2/subChapters/Client-Link.md","articles":[]}]},"previous":{"title":"一、简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"chapters/part1/WSL2-QEMU-KVM.md","mtime":"2022-02-26T14:54:26.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-31T10:13:06.650Z"},"basePath":"../..","book":{"language":"zh-hans"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

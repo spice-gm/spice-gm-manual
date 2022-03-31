@@ -1,0 +1,649 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.3.3 Spice-GTK 改造 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Build-QEMU.html" />
+    
+    
+    <link rel="prev" href="Support-SM-Server.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    一、简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../part1/WSL2-QEMU-KVM.html">
+            
+                <a href="../../../part1/WSL2-QEMU-KVM.html">
+            
+                    
+                    二、WSL2开启QEMU-KVM虚拟化支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Spice-With-BabaSSL.html">
+            
+                <a href="../../Spice-With-BabaSSL.html">
+            
+                    
+                    三、编译改造 Spice
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Build-BabaSSL.html">
+            
+                <a href="../Build-BabaSSL.html">
+            
+                    
+                    3.1 搭建 BabaSSL 环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Meson-Ninja.html">
+            
+                <a href="../Meson-Ninja.html">
+            
+                    
+                    3.2 Meson & Ninja
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Build-Spice.html">
+            
+                <a href="../Build-Spice.html">
+            
+                    
+                    3.3 Spice 项目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="SM2-EVP.html">
+            
+                <a href="SM2-EVP.html">
+            
+                    
+                    3.3.1 SM2-EVP C/C++ 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="Support-SM-Server.html">
+            
+                <a href="Support-SM-Server.html">
+            
+                    
+                    3.3.2 Spice-Server 改造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.3" data-path="Support-SM-GTK.html">
+            
+                <a href="Support-SM-GTK.html">
+            
+                    
+                    3.3.3 Spice-GTK 改造
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Build-QEMU.html">
+            
+                <a href="../Build-QEMU.html">
+            
+                    
+                    3.4 QEMU 编译开启 Spice 支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Make-Certs.html">
+            
+                <a href="../Make-Certs.html">
+            
+                    
+                    3.5 签发证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Client-Link.html">
+            
+                <a href="../Client-Link.html">
+            
+                    
+                    3.6 测试连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../part3/Spice-With-BabaSSL.md">
+            
+                <span>
+            
+                    
+                    四、改造 Spice-html5
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../part3/subChapters/Build-Tengine.html">
+            
+                <a href="../../../part3/subChapters/Build-Tengine.html">
+            
+                    
+                    4.1 编译 Tengine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../part3/subChapters/Double-Certs.html">
+            
+                <a href="../../../part3/subChapters/Double-Certs.html">
+            
+                    
+                    4.2 双证书配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../part3/subChapters/Auto-Switch-WSS.html">
+            
+                <a href="../../../part3/subChapters/Auto-Switch-WSS.html">
+            
+                    
+                    4.3 Spice Auto Switch Wss
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../part3/subChapters/Handle-Ticket-With-SM2.html">
+            
+                <a href="../../../part3/subChapters/Handle-Ticket-With-SM2.html">
+            
+                    
+                    4.4 Spice Handle Ticket With SM2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../../part3/subChapters/Handle-Ticket-With-SM2/Install-NodeJS-WSL2.html">
+            
+                <a href="../../../part3/subChapters/Handle-Ticket-With-SM2/Install-NodeJS-WSL2.html">
+            
+                    
+                    4.4.1 WSL2 Install Node.js & NPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../../../part3/subChapters/Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.html">
+            
+                <a href="../../../part3/subChapters/Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.html">
+            
+                    
+                    4.4.2 SM-Crypto-Plugin Addons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../../../part3/subChapters/Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.html">
+            
+                <a href="../../../part3/subChapters/Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.html">
+            
+                    
+                    4.4.3 Spice-html5 Use Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../part3/subChapters/Stunnel-Proxy.html">
+            
+                <a href="../../../part3/subChapters/Stunnel-Proxy.html">
+            
+                    
+                    4.5 Stunnel 加密转发(改造支持国密)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../part3/subChapters/Client-Link.html">
+            
+                <a href="../../../part3/subChapters/Client-Link.html">
+            
+                    
+                    4.6 测试连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >3.3.3 Spice-GTK 改造</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="spice-gtk">Spice-GTK</h3>
+<h6 id="&#x6307;&#x5B9A;&#x52A0;&#x5BC6;&#x5957;&#x4EF6;">&#x6307;&#x5B9A;&#x52A0;&#x5BC6;&#x5957;&#x4EF6;</h6>
+<blockquote>
+<p>src/spice-channel.c spice_channel_coroutine&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (c-&gt;tls) {
+... ...
+SSL_CTX_set_options(c-&gt;ctx, ssl_options);
+
+SSL_CTX_set_ciphersuites(c-&gt;ctx, <span class="hljs-string">&quot;TLS_SM4_GCM_SM3&quot;</span>);
+... ...
+}
+</code></pre>
+<h5 id="password-&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;-sm2-&#x5B9E;&#x73B0;-----gtk&#x5BA2;&#x6237;&#x7AEF;"><em>Password</em> &#x53E3;&#x4EE4;&#x9A8C;&#x8BC1; <em>SM2</em> &#x5B9E;&#x73B0; --- GTK&#x5BA2;&#x6237;&#x7AEF;</h5>
+<p>&#x9996;&#x5148;&#x4F7F;&#x7528; <code>openssl EVP</code> &#x63A5;&#x53E3;&#x5B9E;&#x73B0; <em>SM2</em> &#x5DE5;&#x5177;&#x5E93;&#xFF0C;<em>GTK</em> &#x9700;&#x8981; <em>C</em> &#x8BED;&#x8A00;&#x7248;&#x672C;</p>
+<blockquote>
+<p><em>sm2-EVP</em> &#x9879;&#x76EE;&#x89C1; <em><a href="https://github.com/Sovea/sm2-EVP" target="_blank">https://github.com/Sovea/sm2-EVP</a></em></p>
+</blockquote>
+<h5 id="ticket-&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x6838;&#x5FC3;&#x51FD;&#x6570;"><em>Ticket</em> &#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x6838;&#x5FC3;&#x51FD;&#x6570;</h5>
+<pre><code class="lang-C"><span class="hljs-function"><span class="hljs-keyword">static</span> SpiceChannelEvent <span class="hljs-title">spice_channel_send_spice_ticket_sm2</span><span class="hljs-params">(SpiceChannel *channel)</span> </span>{
+    SpiceChannelPrivate *c = channel-&gt;priv;
+    EVP_PKEY *pubkey;
+    <span class="hljs-keyword">int</span> en_password_len;
+    BIO *bioKey, *bioKey_pem;
+    <span class="hljs-keyword">char</span> *password, *en_password;
+    <span class="hljs-keyword">uint8_t</span> *encrypted;
+    <span class="hljs-keyword">char</span> *sm2_pubkey;
+    <span class="hljs-keyword">int</span> rc;
+    SpiceChannelEvent ret = SPICE_CHANNEL_ERROR_LINK;
+    bioKey = BIO_new(BIO_s_mem());
+    g_return_val_if_fail(bioKey != <span class="hljs-literal">NULL</span>, ret);
+    <span class="hljs-comment">// wirte pub_key into biokey</span>
+    BIO_write(bioKey, c-&gt;peer_msg-&gt;pub_key, SPICE_TICKET_PUBKEY_BYTES);
+    <span class="hljs-comment">// Use BIO to get DER pubKey</span>
+    pubkey = d2i_PUBKEY_bio(bioKey, <span class="hljs-literal">NULL</span>);
+    encrypted = g_alloca(<span class="hljs-number">128</span>);
+
+    <span class="hljs-comment">// SM2 handle password</span>
+    bioKey_pem = BIO_new(BIO_s_mem());
+    PEM_write_bio_PUBKEY(bioKey_pem, pubkey);
+    bio_to_string(bioKey_pem, &amp;sm2_pubkey);
+    g_object_get(c-&gt;session, <span class="hljs-string">&quot;password&quot;</span>, &amp;password, <span class="hljs-literal">NULL</span>);
+    <span class="hljs-keyword">if</span> (password == <span class="hljs-literal">NULL</span>) password = g_strdup(<span class="hljs-string">&quot;&quot;</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strlen</span>(password) &gt; SPICE_MAX_PASSWORD_LENGTH) {
+        spice_channel_failed_spice_authentication(channel, TRUE);
+        ret = SPICE_CHANNEL_ERROR_AUTH;
+        <span class="hljs-keyword">goto</span> cleanup;
+    }
+
+    rc = Encrypt(password, <span class="hljs-built_in">strlen</span>(password) + <span class="hljs-number">1</span>, &amp;en_password, &amp;en_password_len, sm2_pubkey);
+    g_warn_if_fail(rc &gt; <span class="hljs-number">0</span>);
+    encrypted = (<span class="hljs-keyword">uint8_t</span> *)en_password;
+    <span class="hljs-comment">// printf(&quot;Debug: encrypted: %s \n&quot;, encrypted);</span>
+    spice_channel_write(channel, encrypted, <span class="hljs-number">128</span>);
+    ret = SPICE_CHANNEL_NONE;
+    <span class="hljs-keyword">return</span> ret;
+cleanup:
+    <span class="hljs-built_in">memset</span>(encrypted, <span class="hljs-number">0</span>, <span class="hljs-number">128</span>);
+    EVP_PKEY_free(pubkey);
+    BIO_free(bioKey);
+    g_free(password);
+    <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bio_to_string_with_maxlen</span><span class="hljs-params">(BIO *bio, <span class="hljs-keyword">int</span> max_len, <span class="hljs-keyword">char</span> **str)</span> </span>{
+    <span class="hljs-keyword">char</span> buffer[max_len];
+    <span class="hljs-built_in">memset</span>(buffer, <span class="hljs-number">0</span>, max_len);
+    BIO_read(bio, buffer, max_len - <span class="hljs-number">1</span>);
+    *str = buffer;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bio_to_string</span><span class="hljs-params">(BIO *bio, <span class="hljs-keyword">char</span> **str)</span> </span>{
+    <span class="hljs-keyword">char</span> *temp;
+    <span class="hljs-keyword">int</span> readSize = (<span class="hljs-keyword">int</span>)BIO_get_mem_data(bio, &amp;temp);
+    *str = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>(readSize);
+    BIO_read(bio, *str, readSize);
+}
+</code></pre>
+<h5 id="&#x6539;&#x9020;&#x540E;&#x589E;&#x52A0;sm2&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x7F16;&#x8BD1;">&#x6539;&#x9020;&#x540E;&#x589E;&#x52A0;SM2&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x7F16;&#x8BD1;</h5>
+<blockquote>
+<p>meson.build &#x4FEE;&#x6539;</p>
+</blockquote>
+<pre><code class="lang-makefile">spice_client_glib_headers = [
+  spice_version_h,
+  &apos;channel-cursor.h&apos;,
+  &apos;channel-display.h&apos;,
+  &apos;channel-inputs.h&apos;,
+  &apos;channel-main.h&apos;,
+   ... ...
+  &apos;spice-uri.h&apos;,
+  &apos;spice-util.h&apos;,
+  &apos;usb-device-manager.h&apos;,
+  &apos;sm2.h&apos;, <span class="hljs-comment"># Add</span>
+]
+
+spice_client_glib_introspection_sources = [
+  spice_client_glib_headers,
+  spice_client_glib_enums,
+  &apos;channel-cursor.c&apos;,
+  &apos;channel-display.c&apos;,
+  &apos;channel-inputs.c&apos;,
+  &apos;channel-main.c&apos;,
+  ... ...
+  &apos;sm2.c&apos;, <span class="hljs-comment"># Add</span>
+]
+
+spice_client_glib_sources = [
+  spice_marshals,
+  spice_client_glib_introspection_sources,
+  &apos;bio-gio.c&apos;,
+  &apos;bio-gio.h&apos;,
+  &apos;channel-base.c&apos;,
+  &apos;channel-display-gst.c&apos;,
+  &apos;channel-display-priv.h&apos;,
+  &apos;channel-playback-priv.h&apos;,
+  &apos;channel-usbredir-priv.h&apos;,
+   ... ...
+  &apos;vmcstream.c&apos;,
+  &apos;vmcstream.h&apos;,
+  &apos;sm2.h&apos;, <span class="hljs-comment"># Add</span>
+  &apos;sm2.c&apos;, <span class="hljs-comment"># Add</span>
+]
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Support-SM-Server.html" class="navigation navigation-prev " aria-label="Previous page: 3.3.2 Spice-Server 改造">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Build-QEMU.html" class="navigation navigation-next " aria-label="Next page: 3.4 QEMU 编译开启 Spice 支持">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.3.3 Spice-GTK 改造","level":"1.3.3.3","depth":3,"next":{"title":"3.4 QEMU 编译开启 Spice 支持","level":"1.3.4","depth":2,"path":"chapters/part2/subChapters/Build-QEMU.md","ref":"chapters/part2/subChapters/Build-QEMU.md","articles":[]},"previous":{"title":"3.3.2 Spice-Server 改造","level":"1.3.3.2","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-Server.md","ref":"chapters/part2/subChapters/Reform-Spice/Support-SM-Server.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-GTK.md","mtime":"2022-03-17T02:05:36.896Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-31T10:13:06.650Z"},"basePath":"../../../..","book":{"language":"zh-hans"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
