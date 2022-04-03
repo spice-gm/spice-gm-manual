@@ -3,7 +3,7 @@
 ##### RSA证书
 
 ```sh
-qemu-system-x86_64 -spice port=5930,tls-port=47001,disable-ticketing=on,x509-dir=/home/sovea/dev/spice/rsa_cert_files,tls-channel=main,tls-channel=inputs -drive file=/home/sovea/dev/spice/img-instance/fedora.img -enable-kvm -net nic -net user
+qemu-system-x86_64 -spice port=5930,tls-port=47001,disable-ticketing=on,x509-dir=/home/sovea/dev/spice/rsa_cert_files,tls-channel=main,tls-channel=inputs,streaming-video=filter,playback-compression=off,seamless-migration=on -drive file=/home/sovea/dev/spice/img-instance/fedora.img -m 1024 -smp cores=2,threads=2,sockets=1 -device qxl-vga,vgamem_mb=128 -enable-kvm -cpu host -device virtio-serial -chardev spicevmc,id=vdagent,debug=0,name=vdagent
 
 spicy --spice-ca-file=/home/sovea/dev/spice/rsa_cert_files/ca-cert.pem spice://127.0.0.1?tls-port=47001 --spice-host-subject="C=IL, L=Raanana, O=Red Hat, CN=my server"
 ```
@@ -11,7 +11,7 @@ spicy --spice-ca-file=/home/sovea/dev/spice/rsa_cert_files/ca-cert.pem spice://1
 ##### SM2证书
 
 ```sh
-qemu-system-x86_64 -spice port=5930,tls-port=47001,disable-ticketing=off,password=123456,x509-dir=/home/sovea/dev/spice/sm2_cert_files,tls-channel=main,tls-channel=inputs -drive file=/home/sovea/dev/spice/img-instance/fedora.img -enable-kvm -net nic -net user
+qemu-system-x86_64 -spice port=5930,tls-port=47001,,disable-ticketing=off,password=123456,x509-dir=/home/sovea/dev/spice/sm2_cert_files,tls-channel=main,tls-channel=inputs,streaming-video=filter,playback-compression=off,seamless-migration=on -drive file=/home/sovea/dev/spice/img-instance/fedora.img -m 1024 -smp cores=2,threads=2,sockets=1 -device qxl-vga,vgamem_mb=128 -enable-kvm -cpu host -device virtio-serial -chardev spicevmc,id=vdagent,debug=0,name=vdagent
 
 spicy --spice-ca-file=/home/sovea/dev/spice/sm2_cert_files/ca-cert.pem spice://127.0.0.1?tls-port=47001 --spice-host-subject="C=IL, L=Raanana, O=Red Hat, CN=my server" --password=123456
 ```
