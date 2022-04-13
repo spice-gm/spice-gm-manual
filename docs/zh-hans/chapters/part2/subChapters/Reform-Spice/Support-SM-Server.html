@@ -239,30 +239,17 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../Client-Link.html">
-            
-                <a href="../Client-Link.html">
-            
-                    
-                    3.6 测试连接
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../../../part3/Spice-With-BabaSSL.md">
+        <li class="chapter " data-level="1.4" data-path="../../../part3/Spice-Web.html">
             
-                <span>
+                <a href="../../../part3/Spice-Web.html">
             
                     
-                    四、改造 Spice-html5
+                    四、Web 端改造
             
                 </a>
             
@@ -297,12 +284,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../../../part3/subChapters/Auto-Switch-WSS.html">
+        <li class="chapter " data-level="1.4.3" data-path="../../../part3/subChapters/Spice-html5-Reform.html">
             
-                <a href="../../../part3/subChapters/Auto-Switch-WSS.html">
+                <a href="../../../part3/subChapters/Spice-html5-Reform.html">
             
                     
-                    4.3 Spice Auto Switch Wss
+                    4.3 Spice-html5 改造
             
                 </a>
             
@@ -381,12 +368,31 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../../../part3/subChapters/Client-Link.html">
+
+            </ul>
             
-                <a href="../../../part3/subChapters/Client-Link.html">
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../part4/Link-Test.html">
+            
+                <a href="../../../part4/Link-Test.html">
             
                     
-                    4.6 测试连接
+                    五、测试分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../part4/subChapters/Test-Report.html">
+            
+                <a href="../../../part4/subChapters/Test-Report.html">
+            
+                    
+                    5.1 测试报告
             
                 </a>
             
@@ -445,13 +451,250 @@
                                 <section class="normal markdown-section">
                                 
                                 <h3 id="spice-server">Spice-Server</h3>
+<p><a href="https://github.com/spice-gm/qemu/tree/stable-6.1-for-spice-gm" target="_blank">https://github.com/spice-gm/qemu/tree/stable-6.1-for-spice-gm</a>
+<a href="https://github.com/spice-gm/spice-gm" target="_blank">https://github.com/spice-gm/spice-gm</a></p>
 <h5 id="password-&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;-sm2-&#x5B9E;&#x73B0;-----server&#x7AEF;"><em>Password</em> &#x53E3;&#x4EE4;&#x9A8C;&#x8BC1; <em>SM2</em> &#x5B9E;&#x73B0; --- Server&#x7AEF;</h5>
 <p>&#x9996;&#x5148;&#x4F7F;&#x7528; <code>openssl EVP</code> &#x63A5;&#x53E3;&#x5B9E;&#x73B0; <em>SM2</em> &#x5DE5;&#x5177;&#x5E93;&#xFF0C;<em>Server</em> &#x9700;&#x8981; <em>CPP</em> &#x7248;&#x672C;</p>
 <blockquote>
 <p><em>sm2-EVP</em> &#x9879;&#x76EE;&#x89C1; <em><a href="https://github.com/Sovea/sm2-EVP" target="_blank">https://github.com/Sovea/sm2-EVP</a></em></p>
 </blockquote>
+<h5 id="&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x6539;&#x9020;">&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x6539;&#x9020;</h5>
+<p>Spice Server&#x53CA;QEMU&#x6539;&#x9020;&#x4E3B;&#x8981;&#x662F;&#x5BF9;&#x53E3;&#x4EE4;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x903B;&#x8F91;&#x7684;&#x6539;&#x9020;&#x3002;&#x6539;&#x9020;&#x7684;&#x671F;&#x671B;&#x7ED3;&#x679C;&#x662F;&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;SM2&#x7B97;&#x6CD5;&#x7684;&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#xFF0C;&#x5E76;&#x4FDD;&#x6301;&#x539F;RSA&#x65B9;&#x6848;&#x53EF;&#x7528;&#xFF0C;&#x901A;&#x8FC7;QEMU&#x542F;&#x52A8;&#x865A;&#x62DF;&#x673A;&#x65F6;&#x6307;&#x5B9A;ticket-handler&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x81EA;&#x7531;&#x9009;&#x62E9;&#x3002;</p>
+<p>QEMU&#x5728;&#x6B64;&#x6539;&#x9020;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E3B;&#x8981;&#x627F;&#x62C5;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x65B0;&#x589E;&#x53C2;&#x6570;ticket-handler&#x5E76;&#x5C06;&#x503C;&#x901A;&#x8FC7;Spice Server&#x4E2D;&#x901A;&#x8FC7;<strong>attribute</strong>((visibility( default )))&#x5BFC;&#x51FA;&#x7684;&#x51FD;&#x6570;&#x7B26;&#x53F7;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x3002;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5DE5;&#x4F5C;&#x4E3B;&#x8981;&#x7531;spice-core.c&#x4E2D;qemu_spice_init&#x51FD;&#x6570;&#x5B8C;&#x6210;&#xFF0C;&#x9700;&#x65B0;&#x589E;ticket-handler&#x5B57;&#x6BB5;&#x5E76;&#x901A;&#x8FC7;qemu_opt_get&#x8BFB;&#x53D6;&#x5BF9;&#x5E94;&#x503C;&#xFF0C;&#x5E76;&#x5728;qemu-options.hx&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;ticket-handler&#x53C2;&#x6570;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p>Spice Server&#x9700;&#x5BFC;&#x51FA;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;ticket-handler&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4E14;Server&#x7AEF;&#x8FDE;&#x63A5;&#x53E3;&#x4EE4;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x4E3B;&#x8981;&#x5B58;&#x5728;&#x4E8E;reds-&gt;config-&gt;taTicket(TicketAuthentication&#x7ED3;&#x6784;&#x4F53;)&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x662F;&#x5728;TicketAuthentication&#x4E2D;&#x65B0;&#x589E;ticket-handler&#x53D8;&#x91CF;&#xFF0C;&#x5C06;&#x8BBE;&#x8BA1;&#x51FD;&#x6570;spice_server_set_ticket_handler&#x5728;spice-server.h&#x3001;spice-server.syms&#x4E2D;&#x58F0;&#x660E;&#x5E76;&#x5728;reds.cpp&#x4E2D;&#x5B9E;&#x73B0;&#xFF0C;&#x7528;&#x4E8E;&#x5C06;ticket-handler&#x503C;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#xFF0C;&#x5E76;&#x8BBE;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;sm2&#x3002;</p>
+<p>&#x5C06;Server&#x7AEF;reds_send_link_ack&#x3001;reds_handle_ticket&#x903B;&#x8F91;&#x62C6;&#x5206;&#x4E3A;sm2&#x3001;rsa&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#xFF0C;&#x5229;&#x7528;sm2-EVP&#x5B8C;&#x6210;&#x57FA;&#x4E8E;SM2&#x7B97;&#x6CD5;&#x7684;&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x903B;&#x8F91;&#x5F00;&#x53D1;&#xFF0C;&#x6700;&#x7EC8;&#x5F62;&#x6210;&#x5982;&#x56FE;&#x6240;&#x793A;&#x903B;&#x8F91;&#x7ED3;&#x6784;&#xFF0C;&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x5B9E;&#x9645;&#x903B;&#x8F91;&#x8DEF;&#x7EBF;&#x7531;ticket-handler&#x63A7;&#x5236;&#x3002;</p>
+<p><img src="../../images/1649838363018.png" alt="Spice &#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x903B;&#x8F91;-&#x6539;&#x9020;"></p>
+<p><img src="../../images/1649838320380.png" alt="Spice &#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x903B;&#x8F91;-&#x6539;&#x9020;-web"></p>
+<h5 id="ticket-handler&#x53C2;&#x6570;&#x6DFB;&#x52A0;">ticket-handler&#x53C2;&#x6570;&#x6DFB;&#x52A0;</h5>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">qemu_spice_init</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    QemuOpts *opts = QTAILQ_FIRST(&amp;qemu_spice_opts.head);
+    <span class="hljs-keyword">char</span> *password = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *passwordSecret;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *str, *x509_dir, *addr, *ticket_handler,
+        *x509_key_password = <span class="hljs-literal">NULL</span>,
+        *x509_dh_file = <span class="hljs-literal">NULL</span>,
+        *tls_ciphers = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">char</span> *x509_key_file = <span class="hljs-literal">NULL</span>,
+        *x509_cert_file = <span class="hljs-literal">NULL</span>,
+        *x509_cacert_file = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">int</span> port, tls_port, addr_flags;
+    <span class="hljs-keyword">spice_image_compression_t</span> compression;
+    <span class="hljs-keyword">spice_wan_compression_t</span> wan_compr;
+    <span class="hljs-keyword">bool</span> seamless_migration;
+
+    qemu_thread_get_self(&amp;me);
+
+    <span class="hljs-keyword">if</span> (!opts) {
+        <span class="hljs-keyword">return</span>;
+    }
+    port = qemu_opt_get_number(opts, <span class="hljs-string">&quot;port&quot;</span>, <span class="hljs-number">0</span>);
+    tls_port = qemu_opt_get_number(opts, <span class="hljs-string">&quot;tls-port&quot;</span>, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (port &lt; <span class="hljs-number">0</span> || port &gt; <span class="hljs-number">65535</span>) {
+        error_report(<span class="hljs-string">&quot;spice port is out of range&quot;</span>);
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+    }
+    <span class="hljs-keyword">if</span> (tls_port &lt; <span class="hljs-number">0</span> || tls_port &gt; <span class="hljs-number">65535</span>) {
+        error_report(<span class="hljs-string">&quot;spice tls-port is out of range&quot;</span>);
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+    }
+    passwordSecret = qemu_opt_get(opts, <span class="hljs-string">&quot;password-secret&quot;</span>);
+    <span class="hljs-keyword">if</span> (passwordSecret) {
+        Error *local_err = <span class="hljs-literal">NULL</span>;
+        <span class="hljs-keyword">if</span> (qemu_opt_get(opts, <span class="hljs-string">&quot;password&quot;</span>)) {
+            error_report(<span class="hljs-string">&quot;&apos;password&apos; option is mutually exclusive with &quot;</span>
+                         <span class="hljs-string">&quot;&apos;password-secret&apos;&quot;</span>);
+            <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+        }
+        password = qcrypto_secret_lookup_as_utf8(passwordSecret,
+                                                 &amp;local_err);
+        <span class="hljs-keyword">if</span> (!password) {
+            error_report_err(local_err);
+            <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+        }
+    } <span class="hljs-keyword">else</span> {
+        str = qemu_opt_get(opts, <span class="hljs-string">&quot;password&quot;</span>);
+        <span class="hljs-keyword">if</span> (str) {
+            warn_report(<span class="hljs-string">&quot;&apos;password&apos; option is deprecated and insecure, &quot;</span>
+                        <span class="hljs-string">&quot;use &apos;password-secret&apos; instead&quot;</span>);
+            password = g_strdup(str);
+        }
+    }
+
+    ticket_handler = qemu_opt_get(opts, <span class="hljs-string">&quot;ticket-handler&quot;</span>);
+    <span class="hljs-keyword">if</span> (!ticket_handler) {
+        ticket_handler = <span class="hljs-string">&quot;sm2&quot;</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (tls_port) {
+        x509_dir = qemu_opt_get(opts, <span class="hljs-string">&quot;x509-dir&quot;</span>);
+        <span class="hljs-keyword">if</span> (!x509_dir) {
+            x509_dir = <span class="hljs-string">&quot;.&quot;</span>;
+        }
+
+        str = qemu_opt_get(opts, <span class="hljs-string">&quot;x509-key-file&quot;</span>);
+        <span class="hljs-keyword">if</span> (str) {
+            x509_key_file = g_strdup(str);
+        } <span class="hljs-keyword">else</span> {
+            x509_key_file = g_strdup_printf(<span class="hljs-string">&quot;%s/%s&quot;</span>, x509_dir,
+                                            X509_SERVER_KEY_FILE);
+        }
+
+        str = qemu_opt_get(opts, <span class="hljs-string">&quot;x509-cert-file&quot;</span>);
+        <span class="hljs-keyword">if</span> (str) {
+            x509_cert_file = g_strdup(str);
+        } <span class="hljs-keyword">else</span> {
+            x509_cert_file = g_strdup_printf(<span class="hljs-string">&quot;%s/%s&quot;</span>, x509_dir,
+                                             X509_SERVER_CERT_FILE);
+        }
+
+        str = qemu_opt_get(opts, <span class="hljs-string">&quot;x509-cacert-file&quot;</span>);
+        <span class="hljs-keyword">if</span> (str) {
+            x509_cacert_file = g_strdup(str);
+        } <span class="hljs-keyword">else</span> {
+            x509_cacert_file = g_strdup_printf(<span class="hljs-string">&quot;%s/%s&quot;</span>, x509_dir,
+                                               X509_CA_CERT_FILE);
+        }
+
+        x509_key_password = qemu_opt_get(opts, <span class="hljs-string">&quot;x509-key-password&quot;</span>);
+        x509_dh_file = qemu_opt_get(opts, <span class="hljs-string">&quot;x509-dh-key-file&quot;</span>);
+        tls_ciphers = qemu_opt_get(opts, <span class="hljs-string">&quot;tls-ciphers&quot;</span>);
+    }
+
+    addr = qemu_opt_get(opts, <span class="hljs-string">&quot;addr&quot;</span>);
+    addr_flags = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;ipv4&quot;</span>, <span class="hljs-number">0</span>)) {
+        addr_flags |= SPICE_ADDR_FLAG_IPV4_ONLY;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;ipv6&quot;</span>, <span class="hljs-number">0</span>)) {
+        addr_flags |= SPICE_ADDR_FLAG_IPV6_ONLY;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> SPICE_ADDR_FLAG_UNIX_ONLY</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;unix&quot;</span>, <span class="hljs-number">0</span>)) {
+        addr_flags |= SPICE_ADDR_FLAG_UNIX_ONLY;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    }
+
+    spice_server = spice_server_new();
+    spice_server_set_addr(spice_server, addr ? addr : <span class="hljs-string">&quot;&quot;</span>, addr_flags);
+    <span class="hljs-keyword">if</span> (port) {
+        spice_server_set_port(spice_server, port);
+    }
+    <span class="hljs-keyword">if</span> (tls_port) {
+        spice_server_set_tls(spice_server, tls_port,
+                             x509_cacert_file,
+                             x509_cert_file,
+                             x509_key_file,
+                             x509_key_password,
+                             x509_dh_file,
+                             tls_ciphers);
+    }
+    spice_server_set_ticket_handler(spice_server, ticket_handler);
+    <span class="hljs-keyword">if</span> (password) {
+        qemu_spice.set_passwd(password, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);
+    }
+    spice_server_set_ticket_handler(spice_server, ticket_handler);
+    <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;sasl&quot;</span>, <span class="hljs-number">0</span>)) {
+        <span class="hljs-keyword">if</span> (spice_server_set_sasl(spice_server, <span class="hljs-number">1</span>) == <span class="hljs-number">-1</span>) {
+            error_report(<span class="hljs-string">&quot;spice: failed to enable sasl&quot;</span>);
+            <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+        }
+        auth = <span class="hljs-string">&quot;sasl&quot;</span>;
+    }
+    <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;disable-ticketing&quot;</span>, <span class="hljs-number">0</span>)) {
+        auth = <span class="hljs-string">&quot;none&quot;</span>;
+        spice_server_set_noauth(spice_server);
+    }
+
+    <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;disable-copy-paste&quot;</span>, <span class="hljs-number">0</span>)) {
+        spice_server_set_agent_copypaste(spice_server, <span class="hljs-literal">false</span>);
+    }
+
+    <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;disable-agent-file-xfer&quot;</span>, <span class="hljs-number">0</span>)) {
+        spice_server_set_agent_file_xfer(spice_server, <span class="hljs-literal">false</span>);
+    }
+
+    compression = SPICE_IMAGE_COMPRESS_AUTO_GLZ;
+    str = qemu_opt_get(opts, <span class="hljs-string">&quot;image-compression&quot;</span>);
+    <span class="hljs-keyword">if</span> (str) {
+        compression = parse_compression(str);
+    }
+    spice_server_set_image_compression(spice_server, compression);
+
+    wan_compr = SPICE_WAN_COMPRESSION_AUTO;
+    str = qemu_opt_get(opts, <span class="hljs-string">&quot;jpeg-wan-compression&quot;</span>);
+    <span class="hljs-keyword">if</span> (str) {
+        wan_compr = parse_wan_compression(str);
+    }
+    spice_server_set_jpeg_compression(spice_server, wan_compr);
+
+    wan_compr = SPICE_WAN_COMPRESSION_AUTO;
+    str = qemu_opt_get(opts, <span class="hljs-string">&quot;zlib-glz-wan-compression&quot;</span>);
+    <span class="hljs-keyword">if</span> (str) {
+        wan_compr = parse_wan_compression(str);
+    }
+    spice_server_set_zlib_glz_compression(spice_server, wan_compr);
+
+    str = qemu_opt_get(opts, <span class="hljs-string">&quot;streaming-video&quot;</span>);
+    <span class="hljs-keyword">if</span> (str) {
+        <span class="hljs-keyword">int</span> streaming_video = parse_stream_video(str);
+        spice_server_set_streaming_video(spice_server, streaming_video);
+    } <span class="hljs-keyword">else</span> {
+        spice_server_set_streaming_video(spice_server, SPICE_STREAM_VIDEO_OFF);
+    }
+
+    spice_server_set_agent_mouse
+        (spice_server, qemu_opt_get_bool(opts, <span class="hljs-string">&quot;agent-mouse&quot;</span>, <span class="hljs-number">1</span>));
+    spice_server_set_playback_compression
+        (spice_server, qemu_opt_get_bool(opts, <span class="hljs-string">&quot;playback-compression&quot;</span>, <span class="hljs-number">1</span>));
+
+    qemu_opt_foreach(opts, add_channel, &amp;tls_port, &amp;error_fatal);
+
+    spice_server_set_name(spice_server, qemu_name ?: <span class="hljs-string">&quot;QEMU &quot;</span> QEMU_VERSION);
+    spice_server_set_uuid(spice_server, (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *)&amp;qemu_uuid);
+
+    seamless_migration = qemu_opt_get_bool(opts, <span class="hljs-string">&quot;seamless-migration&quot;</span>, <span class="hljs-number">0</span>);
+    spice_server_set_seamless_migration(spice_server, seamless_migration);
+    spice_server_set_sasl_appname(spice_server, <span class="hljs-string">&quot;qemu&quot;</span>);
+    <span class="hljs-keyword">if</span> (spice_server_init(spice_server, &amp;core_interface) != <span class="hljs-number">0</span>) {
+        error_report(<span class="hljs-string">&quot;failed to initialize spice server&quot;</span>);
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+    };
+    using_spice = <span class="hljs-number">1</span>;
+
+    migration_state.notify = migration_state_notifier;
+    add_migration_state_change_notifier(&amp;migration_state);
+    spice_migrate.base.sif = &amp;migrate_interface.base;
+    qemu_spice.add_interface(&amp;spice_migrate.base);
+
+    qemu_spice_input_init();
+
+    qemu_spice_display_stop();
+
+    g_free(x509_key_file);
+    g_free(x509_cert_file);
+    g_free(x509_cacert_file);
+    g_free(password);
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> HAVE_SPICE_GL</span>
+    <span class="hljs-keyword">if</span> (qemu_opt_get_bool(opts, <span class="hljs-string">&quot;gl&quot;</span>, <span class="hljs-number">0</span>)) {
+        <span class="hljs-keyword">if</span> ((port != <span class="hljs-number">0</span>) || (tls_port != <span class="hljs-number">0</span>)) {
+            error_report(<span class="hljs-string">&quot;SPICE GL support is local-only for now and &quot;</span>
+                         <span class="hljs-string">&quot;incompatible with -spice port/tls-port&quot;</span>);
+            <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+        }
+        <span class="hljs-keyword">if</span> (egl_rendernode_init(qemu_opt_get(opts, <span class="hljs-string">&quot;rendernode&quot;</span>),
+                                DISPLAYGL_MODE_ON) != <span class="hljs-number">0</span>) {
+            error_report(<span class="hljs-string">&quot;Failed to initialize EGL render node for SPICE GL&quot;</span>);
+            <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+        }
+        display_opengl = <span class="hljs-number">1</span>;
+        spice_opengl = <span class="hljs-number">1</span>;
+    }
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+}
+</code></pre>
 <h5 id="ticket-&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x6838;&#x5FC3;&#x51FD;&#x6570;"><em>Ticket</em> &#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x6838;&#x5FC3;&#x51FD;&#x6570;</h5>
-<pre><code class="lang-cpp">static bool reds_send_link_ack_sm2(RedsState *reds, RedLinkInfo *link) {
+<pre><code class="lang-cpp">static bool reds_send_link_ack_sm2(RedsState *reds, RedLinkInfo *link)
+{
     struct {
         SpiceLinkHeader header;
         SpiceLinkReply ack;
@@ -462,7 +705,7 @@
     BIO *bio = nullptr;
     int ret = FALSE;
     size_t hdr_size;
-
+    spice_warning(&quot;Send Link Ack With SM2.&quot;);
     SPICE_VERIFY(sizeof(msg) == sizeof(SpiceLinkHeader) + sizeof(SpiceLinkReply));
 
     msg.header.magic = SPICE_MAGIC;
@@ -543,21 +786,22 @@ end:
 static void reds_handle_ticket_sm2(void *opaque) {
     auto link = static_cast&lt;RedLinkInfo *&gt;(opaque);
     RedsState *reds = link-&gt;reds;
-    char *password;
     int password_size;
 
     string encrypted_data_str((char *)link-&gt;tiTicketing.encrypted_ticket.encrypted_data, 128);
     string decrypted_password;
     int len_plaint = 0;
-
+    spice_warning(&quot;Handle Ticket With SM2.&quot;);
     password_size = sm2Handler.Decrypt(encrypted_data_str, encrypted_data_str.length(), decrypted_password, len_plaint, link-&gt;tiTicketing.priKey);
-
     if (password_size == -1) {
+        if (!reds-&gt;config-&gt;ticketing_enabled || link-&gt;skip_auth) {
+            reds_handle_link(link);
+            return;
+        }
         spice_warning(&quot;failed to decrypt SM2 encrypted password&quot;);
         red_dump_openssl_errors();
         goto error;
     }
-
     if (reds-&gt;config-&gt;ticketing_enabled &amp;&amp; !link-&gt;skip_auth) {
         time_t ltime;
         bool expired;
@@ -597,7 +841,7 @@ static void reds_get_spice_ticket_sm2(RedLinkInfo *link) {
         128, reds_handle_ticket_sm2, link);
 }
 </code></pre>
-<h5 id="&#x6539;&#x9020;&#x540E;&#x589E;&#x52A0;sm2&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x7F16;&#x8BD1;">&#x6539;&#x9020;&#x540E;&#x589E;&#x52A0;SM2&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x7F16;&#x8BD1;</h5>
+<h5 id="server&#x6539;&#x9020;&#x540E;&#x589E;&#x52A0;sm2&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x7F16;&#x8BD1;">Server&#x6539;&#x9020;&#x540E;&#x589E;&#x52A0;SM2&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x7F16;&#x8BD1;</h5>
 <blockquote>
 <p>meson.build &#x4FEE;&#x6539;</p>
 </blockquote>
@@ -671,7 +915,7 @@ spice_server_sources = [
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3.2 Spice-Server 改造","level":"1.3.3.2","depth":3,"next":{"title":"3.3.3 Spice-GTK 改造","level":"1.3.3.3","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-GTK.md","ref":"chapters/part2/subChapters/Reform-Spice/Support-SM-GTK.md","articles":[]},"previous":{"title":"3.3.1 SM2-EVP C/C++ 实现","level":"1.3.3.1","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/SM2-EVP.md","ref":"chapters/part2/subChapters/Reform-Spice/SM2-EVP.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-Server.md","mtime":"2022-03-17T02:04:41.466Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-03T11:38:02.672Z"},"basePath":"../../../..","book":{"language":"zh-hans"}});
+            gitbook.page.hasChanged({"page":{"title":"3.3.2 Spice-Server 改造","level":"1.3.3.2","depth":3,"next":{"title":"3.3.3 Spice-GTK 改造","level":"1.3.3.3","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-GTK.md","ref":"chapters/part2/subChapters/Reform-Spice/Support-SM-GTK.md","articles":[]},"previous":{"title":"3.3.1 SM2-EVP C/C++ 实现","level":"1.3.3.1","depth":3,"path":"chapters/part2/subChapters/Reform-Spice/SM2-EVP.md","ref":"chapters/part2/subChapters/Reform-Spice/SM2-EVP.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"chapters/part2/subChapters/Reform-Spice/Support-SM-Server.md","mtime":"2022-04-13T08:26:13.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-13T09:10:34.930Z"},"basePath":"../../../..","book":{"language":"zh-hans"}});
         });
     </script>
 </div>

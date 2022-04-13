@@ -1,0 +1,706 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.3 Spice-html5 改造 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Handle-Ticket-With-SM2.html" />
+    
+    
+    <link rel="prev" href="Double-Certs.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    一、简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../part1/WSL2-QEMU-KVM.html">
+            
+                <a href="../../part1/WSL2-QEMU-KVM.html">
+            
+                    
+                    二、WSL2开启QEMU-KVM虚拟化支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../part2/Spice-With-BabaSSL.html">
+            
+                <a href="../../part2/Spice-With-BabaSSL.html">
+            
+                    
+                    三、编译改造 Spice
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../part2/subChapters/Build-BabaSSL.html">
+            
+                <a href="../../part2/subChapters/Build-BabaSSL.html">
+            
+                    
+                    3.1 搭建 BabaSSL 环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../part2/subChapters/Meson-Ninja.html">
+            
+                <a href="../../part2/subChapters/Meson-Ninja.html">
+            
+                    
+                    3.2 Meson & Ninja
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../part2/subChapters/Build-Spice.html">
+            
+                <a href="../../part2/subChapters/Build-Spice.html">
+            
+                    
+                    3.3 Spice 项目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../part2/subChapters/Reform-Spice/SM2-EVP.html">
+            
+                <a href="../../part2/subChapters/Reform-Spice/SM2-EVP.html">
+            
+                    
+                    3.3.1 SM2-EVP C/C++ 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../part2/subChapters/Reform-Spice/Support-SM-Server.html">
+            
+                <a href="../../part2/subChapters/Reform-Spice/Support-SM-Server.html">
+            
+                    
+                    3.3.2 Spice-Server 改造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../part2/subChapters/Reform-Spice/Support-SM-GTK.html">
+            
+                <a href="../../part2/subChapters/Reform-Spice/Support-SM-GTK.html">
+            
+                    
+                    3.3.3 Spice-GTK 改造
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../part2/subChapters/Build-QEMU.html">
+            
+                <a href="../../part2/subChapters/Build-QEMU.html">
+            
+                    
+                    3.4 QEMU 编译开启 Spice 支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../part2/subChapters/Make-Certs.html">
+            
+                <a href="../../part2/subChapters/Make-Certs.html">
+            
+                    
+                    3.5 签发证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Spice-Web.html">
+            
+                <a href="../Spice-Web.html">
+            
+                    
+                    四、Web 端改造
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Build-Tengine.html">
+            
+                <a href="Build-Tengine.html">
+            
+                    
+                    4.1 编译 Tengine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Double-Certs.html">
+            
+                <a href="Double-Certs.html">
+            
+                    
+                    4.2 双证书配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="Spice-html5-Reform.html">
+            
+                <a href="Spice-html5-Reform.html">
+            
+                    
+                    4.3 Spice-html5 改造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Handle-Ticket-With-SM2.html">
+            
+                <a href="Handle-Ticket-With-SM2.html">
+            
+                    
+                    4.4 Spice Handle Ticket With SM2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="Handle-Ticket-With-SM2/Install-NodeJS-WSL2.html">
+            
+                <a href="Handle-Ticket-With-SM2/Install-NodeJS-WSL2.html">
+            
+                    
+                    4.4.1 WSL2 Install Node.js & NPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.html">
+            
+                <a href="Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.html">
+            
+                    
+                    4.4.2 SM-Crypto-Plugin Addons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.html">
+            
+                <a href="Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.html">
+            
+                    
+                    4.4.3 Spice-html5 Use Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Stunnel-Proxy.html">
+            
+                <a href="Stunnel-Proxy.html">
+            
+                    
+                    4.5 Stunnel 加密转发(改造支持国密)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../part4/Link-Test.html">
+            
+                <a href="../../part4/Link-Test.html">
+            
+                    
+                    五、测试分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../part4/subChapters/Test-Report.html">
+            
+                <a href="../../part4/subChapters/Test-Report.html">
+            
+                    
+                    5.1 测试报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >4.3 Spice-html5 改造</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="spice-html5-&#x6539;&#x9020;">Spice-html5 &#x6539;&#x9020;</h3>
+<p><a href="https://github.com/spice-gm/spice-html5-gm" target="_blank">https://github.com/spice-gm/spice-html5-gm</a></p>
+<p><a href="https://github.com/spice-gm/sm-crypto-plugin-spice-html5" target="_blank">https://github.com/spice-gm/sm-crypto-plugin-spice-html5</a></p>
+<h5 id="&#x6539;&#x9020;&#x65B9;&#x6848;">&#x6539;&#x9020;&#x65B9;&#x6848;</h5>
+<p>&#x5BF9;&#x5E94;C/S&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x6539;&#x9020;&#xFF0C;Spice-html5&#x4E5F;&#x9700;&#x517C;&#x5BB9;SM2/RSA&#x4E24;&#x79CD;&#x9A8C;&#x8BC1;&#x65B9;&#x6848;&#x3002;&#x901A;&#x8FC7;Webassembly&#x6216;Node.js Addons&#x590D;&#x7528;SM2-EVP&#xFF0C;&#x4EA7;&#x51FA;wasm&#x6216;node&#x63D2;&#x4EF6;&#x3002;&#x5BF9;&#x4E8E;Webassembly&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x914D;&#x7F6E;Emscripten&#x7B49;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x5BF9;&#x4E8E;Node.js Addons&#x9700;&#x5728;WSL&#x4E2D;&#x5229;&#x7528;NVM&#x5B89;&#x88C5;Node&#x53CA;npm&#x73AF;&#x5883;&#x3002;</p>
+<p>&#x4F7F;&#x7528;Webassembly&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x590D;&#x7528;&#x524D;&#xFF0C;&#x9700;&#x5BF9;&#x4F9D;&#x8D56;OpenSSL/BabaSSL&#x4F7F;&#x7528;emconfigure&#x53CA;emmake&#x7F16;&#x8BD1;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#x3002;&#x518D;&#x901A;&#x8FC7;emcc&#x5BF9;&#x590D;&#x7528;&#x903B;&#x8F91;&#x6307;&#x5B9A;&#x4E0A;&#x8FF0;&#x94FE;&#x63A5;&#x5E93;&#x53CA;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x5BF9;&#x9700;&#x5BFC;&#x51FA;&#x51FD;&#x6570;&#x4F7F;&#x7528;EMSCRIPTEN_KEEPALIVE&#x58F0;&#x660E;&#xFF0C;&#x4EA7;&#x51FA;wasm&#x53CA;js&#x80F6;&#x6C34;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x4F7F;&#x7528;Node.js Addons&#xFF0C;&#x5229;&#x7528;node-gyp&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x5C06;&#x51FD;&#x6570;&#x901A;&#x8FC7;NODE_SET_METHOD&#x8FDB;&#x884C;&#x5BFC;&#x51FA;&#x3002;&#x5E76;&#x4F7F;&#x7528;express&#x642D;&#x5EFA;&#x7B80;&#x5355;&#x540E;&#x53F0;&#x670D;&#x52A1;&#xFF0C;&#x63A5;&#x5165;&#x7F16;&#x8BD1;&#x540E;node&#x63D2;&#x4EF6;&#x63D0;&#x4F9B;&#x6539;&#x9020;&#x6240;&#x9700;&#x8FD8;&#x539F;&#x516C;&#x94A5;&#x3001;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x7B49;&#x80FD;&#x529B;&#x3002;&#x7279;&#x522B;&#x7684;&#xFF0C;&#x5728;&#x4F7F;&#x7528;Node.js Addons&#x65F6;&#x9700;&#x5C06;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x4F7F;&#x4E24;&#x8005;&#x80FD;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x3002; </p>
+<p>&#x53E3;&#x4EE4;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x7684;&#x63A7;&#x5236;&#x53C2;&#x6570;&#x7531;Option&#x6807;&#x7B7E;&#x5B9E;&#x73B0;&#xFF0C;&#x9ED8;&#x8BA4;&#x6307;&#x5B9A;SM2&#x7B97;&#x6CD5;&#x3002;Spice-html5&#x53E3;&#x4EE4;&#x9A8C;&#x8BC1;&#x903B;&#x8F91;&#x5904;&#x7406;&#x4E3B;&#x8981;&#x5B58;&#x5728;&#x4E8E;SpiceConn&#x7C7B;&#x7684;process_inbound&#x51FD;&#x6570;&#x53CA;SpiceLinkReply&#x7C7B;&#x7684;from_buffer&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x4E24;&#x73AF;&#x8282;&#x4E2D;&#x901A;&#x8FC7;ticket-handler&#x503C;&#x5224;&#x65AD;&#x9009;&#x7528;SM2/RSA&#x3002;</p>
+<h5 id="&#x6838;&#x5FC3;&#x4EE3;&#x7801;">&#x6838;&#x5FC3;&#x4EE3;&#x7801;</h5>
+<blockquote>
+<p>spice.html</p>
+</blockquote>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;Sidenav&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SidenavClosed&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 0;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;closebtn&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;close_nav()&quot;</span>&gt;</span>&amp;#10006;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;host&quot;</span>&gt;</span>Host:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&apos;text&apos;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&apos;host&apos;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&apos;localhost&apos;</span>&gt;</span> <span class="hljs-comment">&lt;!-- localhost --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;port&quot;</span>&gt;</span>Port:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&apos;text&apos;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&apos;port&apos;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&apos;5959&apos;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>Password:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&apos;password&apos;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&apos;password&apos;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&apos;&apos;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;if_websocket_secure&quot;</span>&gt;</span>Protocol:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;if_websocket_secure&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;if_ntls&quot;</span>&gt;</span>Safety Option:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;if_ntls&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;ntls&quot;</span>&gt;</span>NTLS<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;tls&quot;</span>&gt;</span>TLS<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;if_sm2&quot;</span>&gt;</span>Ticket Handler:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;if_sm2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;sm2&quot;</span>&gt;</span>SM2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;rsa&quot;</span>&gt;</span>RSA<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;connectButton&quot;</span>&gt;</span>Start Connection<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sendCtrlAltDel&quot;</span>&gt;</span>Send Ctrl-Alt-Delete<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;debugLogs&quot;</span>&gt;</span>Toggle Debug Logs<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;message-div&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;spice-message&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;debug-div&quot;</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- If DUMPXXX is turned on, dumped images will go here --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.location.protocol == <span class="hljs-string">&apos;https:&apos;</span>) {
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;if_websocket_secure&quot;</span>).append(<span class="hljs-keyword">new</span> Option(<span class="hljs-string">&quot;wss&quot;</span>, <span class="hljs-string">&quot;wss://&quot;</span>));
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;if_websocket_secure&quot;</span>).append(<span class="hljs-keyword">new</span> Option(<span class="hljs-string">&quot;ws&quot;</span>, <span class="hljs-string">&quot;ws://&quot;</span>));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">connect</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> host, port, password, scheme = <span class="hljs-string">&quot;ws://&quot;</span>, uri, tls_option, ticket_handler_option;
+
+    host = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;host&quot;</span>).value;
+    port = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;port&quot;</span>).value;
+    password = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;password&quot;</span>).value;
+    <span class="hljs-keyword">var</span> select_websocket_scheme = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;if_websocket_secure&quot;</span>);
+    scheme = select_websocket_scheme.options[select_websocket_scheme.selectedIndex].value;
+    <span class="hljs-keyword">var</span> select_websocket_tls_option = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;if_ntls&quot;</span>);
+    tls_option = select_websocket_tls_option.options[select_websocket_tls_option.selectedIndex].value;
+    <span class="hljs-keyword">var</span> select_ticket_handler_option = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;if_sm2&quot;</span>);
+    ticket_handler_option = select_ticket_handler_option.options[select_ticket_handler_option.selectedIndex].value;
+    <span class="hljs-keyword">if</span> ((!host) || (!port)) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;must set host and port&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (sc) {
+        sc.stop();
+    }
+
+    uri = scheme + host + <span class="hljs-string">&quot;:&quot;</span> + port + <span class="hljs-string">&quot;/&quot;</span> + tls_option;
+
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;connectButton&apos;</span>).innerHTML = <span class="hljs-string">&quot;Stop Connection&quot;</span>;
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;connectButton&apos;</span>).onclick = disconnect;
+    <span class="hljs-keyword">try</span> {
+        sc = <span class="hljs-keyword">new</span> SpiceHtml5.SpiceMainConn({
+            uri: uri, screen_id: <span class="hljs-string">&quot;spice-screen&quot;</span>, dump_id: <span class="hljs-string">&quot;debug-div&quot;</span>, ticket_handler: ticket_handler_option,
+            message_id: <span class="hljs-string">&quot;message-div&quot;</span>, password: password, onerror: spice_error, onagent: agent_connected
+        });
+    }
+    <span class="hljs-keyword">catch</span> (e) {
+        alert(e.toString());
+        disconnect();
+    }
+
+}
+</code></pre>
+<blockquote>
+<p>spiceconn.js SpiceConn.process_inbound</p>
+</blockquote>
+<pre><code class="lang-javascript">process_inbound: <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">mb, saved_header</span>) </span>{
+    ... ...
+    case <span class="hljs-string">&quot;link&quot;</span>:
+        <span class="hljs-keyword">this</span>.reply_link = <span class="hljs-keyword">new</span> SpiceLinkReply(mb, <span class="hljs-number">0</span>, { ticket_handler: <span class="hljs-keyword">this</span>.ticket_handler });
+        <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.reply_link.from_buffer(mb);
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.reply_link.error) {
+            <span class="hljs-keyword">this</span>.state = <span class="hljs-string">&quot;error&quot;</span>;
+            <span class="hljs-keyword">var</span> e = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Error: reply link error &apos;</span> + <span class="hljs-keyword">this</span>.reply_link.error);
+            <span class="hljs-keyword">this</span>.report_error(e);
+        }
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.ticket_handler == <span class="hljs-string">&quot;rsa&quot;</span>) {
+                <span class="hljs-keyword">this</span>.send_ticket(rsa_encrypt(<span class="hljs-keyword">this</span>.reply_link.pub_key, <span class="hljs-keyword">this</span>.password + <span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">0</span>)));
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">let</span> that = <span class="hljs-keyword">this</span>;
+                <span class="hljs-keyword">let</span> encryptedPassword = <span class="hljs-string">&quot;&quot;</span>;
+                <span class="hljs-keyword">var</span> url = <span class="hljs-string">&apos;https://xxx.xxx.xxx.xxx:18887/sm2-plugin/encrypt-password-pubKey&apos;</span>
+                <span class="hljs-keyword">await</span> $.ajax({
+                    url: url,
+                    data: {
+                        pubKey: that.reply_link.pub_key,
+                        password: that.password + <span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">0</span>),
+                    },
+                    dataType: <span class="hljs-string">&apos;json&apos;</span>,
+                    type: <span class="hljs-string">&apos;POST&apos;</span>,
+                    success: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+                        <span class="hljs-built_in">console</span>.log(data);
+                        <span class="hljs-keyword">var</span> dataArr = data.encryptedPassword.split(<span class="hljs-string">&apos;,&apos;</span>);
+                        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; dataArr.length; i++) dataArr[i] = <span class="hljs-built_in">parseInt</span>(dataArr[i]);
+                        <span class="hljs-built_in">console</span>.log(dataArr);
+                        encryptedPassword = dataArr;
+                    }
+                })
+                <span class="hljs-keyword">this</span>.send_ticket(encryptedPassword);
+            }
+            <span class="hljs-keyword">this</span>.state = <span class="hljs-string">&quot;ticket&quot;</span>;
+            <span class="hljs-keyword">this</span>.wire_reader.request(SpiceLinkAuthReply.prototype.buffer_size());
+        }
+        <span class="hljs-keyword">break</span>;
+    ... ...
+}
+</code></pre>
+<blockquote>
+<p>spicemsg.js SpiceLinkReply.from_buffer</p>
+</blockquote>
+<pre><code class="lang-javascript">from_buffer: <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, at</span>) </span>{
+    at = at || <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> i;
+    <span class="hljs-keyword">var</span> orig_at = at;
+    <span class="hljs-keyword">var</span> dv = <span class="hljs-keyword">new</span> SpiceDataView(a);
+    <span class="hljs-keyword">this</span>.error = dv.getUint32(at, <span class="hljs-literal">true</span>); at += <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.options.ticket_handler == <span class="hljs-string">&quot;rsa&quot;</span>) {
+        <span class="hljs-keyword">this</span>.pub_key = create_rsa_from_mb(a, at);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">var</span> keyData = dv.u8.slice(<span class="hljs-number">4</span>, <span class="hljs-number">4</span> + <span class="hljs-number">162</span>);
+        <span class="hljs-keyword">let</span> that = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">var</span> url = <span class="hljs-string">&apos;https://xxx.xxx.xxx.xxx:18887/sm2-plugin/repair-pubKey&apos;</span>
+        <span class="hljs-keyword">await</span> $.ajax({
+            url: url,
+            data: {
+                keyData: keyData.toString(),
+            },
+            dataType: <span class="hljs-string">&apos;json&apos;</span>,
+            type: <span class="hljs-string">&apos;POST&apos;</span>,
+            success: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+                <span class="hljs-built_in">console</span>.log(data);
+                that.pub_key = data.pubKey;
+            }
+        })
+        at = <span class="hljs-number">4</span>;
+    }
+    at += Constants.SPICE_TICKET_PUBKEY_BYTES;
+
+    <span class="hljs-keyword">var</span> num_common_caps = dv.getUint32(at, <span class="hljs-literal">true</span>); at += <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">var</span> num_channel_caps = dv.getUint32(at, <span class="hljs-literal">true</span>); at += <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">var</span> caps_offset = dv.getUint32(at, <span class="hljs-literal">true</span>); at += <span class="hljs-number">4</span>;
+
+    at = orig_at + caps_offset;
+    <span class="hljs-keyword">this</span>.common_caps = [];
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; num_common_caps; i++) {
+        <span class="hljs-keyword">this</span>.common_caps.unshift(dv.getUint32(at, <span class="hljs-literal">true</span>)); at += <span class="hljs-number">4</span>;
+    }
+
+    <span class="hljs-keyword">this</span>.channel_caps = [];
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; num_channel_caps; i++) {
+        <span class="hljs-keyword">this</span>.channel_caps.unshift(dv.getUint32(at, <span class="hljs-literal">true</span>)); at += <span class="hljs-number">4</span>;
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Double-Certs.html" class="navigation navigation-prev " aria-label="Previous page: 4.2 双证书配置">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Handle-Ticket-With-SM2.html" class="navigation navigation-next " aria-label="Next page: 4.4 Spice Handle Ticket With SM2">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.3 Spice-html5 改造","level":"1.4.3","depth":2,"next":{"title":"4.4 Spice Handle Ticket With SM2","level":"1.4.4","depth":2,"path":"chapters/part3/subChapters/Handle-Ticket-With-SM2.md","ref":"chapters/part3/subChapters/Handle-Ticket-With-SM2.md","articles":[{"title":"4.4.1 WSL2 Install Node.js & NPM","level":"1.4.4.1","depth":3,"path":"chapters/part3/subChapters/Handle-Ticket-With-SM2/Install-NodeJS-WSL2.md","ref":"chapters/part3/subChapters/Handle-Ticket-With-SM2/Install-NodeJS-WSL2.md","articles":[]},{"title":"4.4.2 SM-Crypto-Plugin Addons","level":"1.4.4.2","depth":3,"path":"chapters/part3/subChapters/Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.md","ref":"chapters/part3/subChapters/Handle-Ticket-With-SM2/SM-Crypto-Plugin-Addons.md","articles":[]},{"title":"4.4.3 Spice-html5 Use Plugin","level":"1.4.4.3","depth":3,"path":"chapters/part3/subChapters/Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.md","ref":"chapters/part3/subChapters/Handle-Ticket-With-SM2/Spice-H5-Use-Plugin.md","articles":[]}]},"previous":{"title":"4.2 双证书配置","level":"1.4.2","depth":2,"path":"chapters/part3/subChapters/Double-Certs.md","ref":"chapters/part3/subChapters/Double-Certs.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"chapters/part3/subChapters/Spice-html5-Reform.md","mtime":"2022-04-13T08:10:17.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-13T09:10:34.930Z"},"basePath":"../../..","book":{"language":"zh-hans"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

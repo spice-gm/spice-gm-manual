@@ -12,9 +12,9 @@ qemu-system-x86_64 -spice port=5930,tls-port=47001,disable-ticketing=on,x509-dir
 
 `Chrome`
 
-![image-20220221221958925](../images/image-20220226232805378.png)
-![image-20220221221958925](../images/image-20220226232829017.png)
+![image-20220221221958925](../images/1649838409066.png)
+![image-20220221221958925](../images/1649838428898.png)
 
 `可信浏览器`
 
-![image-20220221221958925](../images/image-20220226232854244.png)
+![image-20220221221958925](../images/1649838446998.png)

@@ -48,7 +48,7 @@ CAfile = /home/sovea/dev/spice/rsa_cert_files/ca-cert.pem
 
 ##### 连接示例
 
-![](../images/image-202003101646891199.png)
+![](../images/1649838466894.png)
 
 > RFC 8998: ShangMi (SM) Cipher Suites for TLS 1.3
 
@@ -57,4 +57,4 @@ CAfile = /home/sovea/dev/spice/rsa_cert_files/ca-cert.pem
    CipherSuite TLS_SM4_CCM_SM3 = { 0x00, 0xC7 };
 ```
 
-![](../images/image-202203101646891196.png)
+![](../images/1649838485200.png)

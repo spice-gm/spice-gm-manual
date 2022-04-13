@@ -17,11 +17,11 @@ spicy --spice-ca-file=/home/sovea/dev/spice/sm2_cert_files/ca-cert.pem spice://1
 ```
 ##### 连接示例
 
-![image-20220316164626](../images/image-20220316164626.png)
+![1649838074975](../images/1649838074975.png)
 
-![image-20220316164650](../images/image-20220316164650.png)
+![1649838244502](../images/1649838244502.png)
 
-![image-20220316165239](../images/image-20220316165239.png)
+![1649838258515](../images/1649838258515.png)
 ##### 抓取流量
 
 ```sh
@@ -37,4 +37,4 @@ tcpdump  -i 网卡 -nn -vv  port 47001  -w  babassl.pcap
    CipherSuite TLS_SM4_CCM_SM3 = { 0x00, 0xC7 };
 ```
 
-![image-20220316171989](../images/image-20220316171989.png)
+![1649838286677](../images/1649838286677.png)
