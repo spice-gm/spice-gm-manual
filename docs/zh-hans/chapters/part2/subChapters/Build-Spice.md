@@ -27,11 +27,11 @@ make 编译
 
 ```sh
 ./autogen.sh
-./configure --enable-gstreamer=yes --enable-lz4=yes
+./configure --enable-gstreamer=yes --enable-lz4=yes --enable-tests=no #跳过测试，改造不涉及测试用例补充及修改
 make; sudo make install
 ```
 
-也可使用 *Meson* 和 *Ninja* 编译 (改造时推荐)
+也可使用 *Meson* 和 *Ninja* 编译
 
 ```shell
 mkdir build && cd build
