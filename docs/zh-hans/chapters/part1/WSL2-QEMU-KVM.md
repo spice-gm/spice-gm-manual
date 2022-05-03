@@ -13,6 +13,12 @@ LxRunOffline install -n ubuntu18-spice -d D:\WSL\Instance\ubuntu18-spice\ -f D:\
 wsl --set-version ubuntu18-spice 2
 ```
 
+建议利用*PowerShell*(管理员权限)设置允许*WSL*网卡通过防火墙
+
+```powershell
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound  -InterfaceAlias "vEthernet (WSL)"  -Action Allow
+```
+
 **重新编译Linux内核，优化 WSL 上 KVM 的内核配置**
 
 ```sh
