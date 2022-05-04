@@ -17,7 +17,7 @@ git clone https://gitlab.freedesktop.org/spice/spice.git
 cd spice
 git submodule update --init --recursive
 apt install pkg-config m4 libtool automake autoconf autoconf-archive libglib2.0-dev
-apt install libpixman-1-dev libcairo2-dev libpango1.0-dev libjpeg8-dev libgif-dev
+apt install libpixman-1-dev libcairo2-dev libpango1.0-dev libjpeg8-dev libgif-dev libsasl2-dev
 apt install libopus-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev liblz4-dev
 pip3 install pyparsing
 pip install pyparsing
@@ -42,11 +42,17 @@ ninja install
 cp server/libspice-server.so.1 /usr/local/lib/libspice-server.so.1
 cp server/libspice-server.so.1.14.1 /usr/local/lib/libspice-server.so.1.14.1
 ```
-> 编译时偶发 *pyparsing* 缺失的报错，如已安装，应是编译时检测命令有问题。可修改使跳过pyparsing检测，不影响项目后续编译运行
+> 编译时偶发 *pyparsing* 缺失的报错，如已安装，应是编译时检测命令有问题。可手动修改，或更新到最新版本
 
 *spice/spice/subprojects/spice-common/meson.build*
 ```makefile
-foreach module : ['six', 'pyparsing'] # 删除 pyparsing
+foreach module : ['six', 'pyparsing']
+    message('Checking for python module @0@'.format(module))
+    cmd = run_command(python, '-c', 'import @0@'.format(module))
+    if cmd.returncode() != 0
+    error('Python module @0@ not found'.format(module))
+    endif
+endforeach
 ```
 
 ### Spice-GTK
